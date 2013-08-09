@@ -1,0 +1,35 @@
+
+<% if not mapped_pages.empty? then %>
+	<p>
+		<%= link_to raw("Create a page"), new_admin_page_path %>
+	</p>
+
+	<table class="cms-pages">
+		<tr>
+			<th>Page</th>
+		</tr>
+
+		<% n_row = 0; mapped_pages.each do |page| n_row += 1 %>
+			<tr class="<%= "level-#{page.level}" %> <%= n_row % 2 == 1 ? raw('odd') : '' %>">
+				<td>
+					<%= link_to raw(page.html_title), edit_admin_page_path(page.model) %>
+					<span class="options">
+						(	
+							<% if page.model.template.present? and not page.model.template.child_templates.empty? %>
+								<%= link_to "Add", new_admin_page_path({:page => {:parent_id => page.id}}) %>, 
+							<% end %>
+							<%= link_to "View", admin_page_path(page.id) %>
+							<% if page.model.has_preview? then %>
+								, <%= link_to "Preview", page.model.url + "?show_preview=1", :target => "website" %>
+							<% end %>
+						)
+					</span>
+				</td>
+
+			</tr>
+		<% end %>
+	</table>
+
+<% else %>
+	<%= link_to raw("There are currently no pages &mdash; Create one"), new_admin_page_path %>
+<% end %>

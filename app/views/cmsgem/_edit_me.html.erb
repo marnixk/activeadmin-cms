@@ -1,0 +1,5 @@
+<% if signed_in? then %>
+	<div id="to-admin">
+		<p><a href="<%= edit_admin_page_path(@page) %>" target="editor">Edit</a></p>
+	</div>
+<% end %>
