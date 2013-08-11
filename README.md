@@ -15,17 +15,21 @@ Follow the instructions below to get it working.
 
 Make sure you have these gems declared in your `Gemfile`.
 
-	gem 'activeadmin'
-	gem 'paperclip'
+	gem 'activeadmin', '0.5.1'
+	gem 'paperclip', '3.4.0'
+	gem 'jquery-rails', '2.2.1'
 	gem 'tinymce-rails'
 	gem 'activeadmin-cms', :git => "http://github.com/marnixk/activeadmin-cms"
 
+Then run `bundle install` to get all the gems.
 
 ## Copy migrations:
 
 	$ bundle exec rake railties:install:migrations
-	$ rake db:migrate
 	$ rails generate active_admin:install --skip-users
+	$ rake db:migrate
+
+Remember, the default user is: 'admin@example.com / password'
 
 
 ## Route configuration
