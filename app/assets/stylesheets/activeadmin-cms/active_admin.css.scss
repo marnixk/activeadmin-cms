@@ -1,0 +1,71 @@
+// Active Admin CSS Styles
+@import "active_admin/mixins";
+@import "active_admin/base";
+
+//
+
+// To customize the Active Admin interfaces, add your
+// styles here:
+
+.has_many.property_settings .button {
+	display: none;
+}
+
+textarea.tinymce {
+	height: 600px;
+}
+
+.image-sample {
+	max-height: 320px;
+	max-width: 480px;
+}
+
+.file-selection {
+	width: 250px;
+}
+
+.cms-pages a {
+	text-decoration: none;
+}
+
+.cms-pages tr.odd {
+	background-color: #f0f0f0;
+}
+
+.cms-pages tr:hover .options {
+	visibility: visible;
+}
+
+.cms-pages .options {
+	padding-left: 5px;
+	font-size: 10px;
+	visibility: hidden;
+}
+
+.cms-pages .level-1 td {
+	font-size: 1.1em;
+	font-weight: bold;
+	border-top: 1px solid #666F74;
+}
+
+.cms-pages .options a {
+	color: #666;
+}
+
+.cms-pages .options a:hover {
+	color: #333;
+	text-decoration: underline;
+}
+
+.admin_pages form textarea {
+	font-size: 13px;
+}
+
+.admin_pages .datepicker input {
+	width: 200px;
+}
+
+.admin_pages #page-preview {
+	width: 100%;
+	height: 600px;
+}
